@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: "30 17 * * 5" # Every Friday at 17:30 UTC
 
@@ -212,7 +212,7 @@ jobs:
         working-directory: examples/wasm/www
 
       - name: Upload bundled textwrap-wasm-demo-app
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: textwrap-wasm-demo-app
           path: examples/wasm/www/dist
@@ -220,7 +220,7 @@ jobs:
   wasm-deploy:
     name: Deploy Wasm demo
     needs: wasm-build
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -232,7 +232,7 @@ jobs:
         run: rm *
 
       - name: Download bundled textwrap-wasm-demo-app
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: textwrap-wasm-demo-app
 

@@ -4,7 +4,7 @@
 extern crate alloc;
 
 use crate::core::display_width;
-use crate::{wrap, Options};
+use crate::{Options, wrap};
 
 #[cfg(not(feature = "std"))]
 use alloc::{string::String, vec::Vec};

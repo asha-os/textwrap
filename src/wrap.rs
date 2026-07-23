@@ -9,9 +9,9 @@ use alloc::vec::Vec;
 #[cfg(feature = "std")]
 use std::borrow::{Cow, ToOwned};
 
-use crate::core::{break_words, display_width, Word};
-use crate::word_splitters::split_words;
 use crate::Options;
+use crate::core::{Word, break_words, display_width};
+use crate::word_splitters::split_words;
 
 /// Wrap a line of text at a given width.
 ///

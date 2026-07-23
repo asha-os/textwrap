@@ -22,7 +22,7 @@ extern crate alloc;
 #[cfg(feature = "smawk")]
 mod optimal_fit;
 #[cfg(feature = "smawk")]
-pub use optimal_fit::{wrap_optimal_fit, OverflowError, Penalties};
+pub use optimal_fit::{OverflowError, Penalties, wrap_optimal_fit};
 
 use crate::core::{Fragment, Word};
 use alloc::vec::Vec;
